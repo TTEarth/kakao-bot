@@ -23,7 +23,7 @@ def message():
     data = json.loads(request.data)
     content = data["content"]
 
-    if content == str("코인").decode('utf-8'):
+    if content == str("가상화폐"): # .decode('utf-8') 삭제
         response = urlopen("https://api.bithumb.com/public/ticker/").read().decode('utf8')
         responsejson = json.loads(response)
         coin = responsejson['data']['opening_price']
